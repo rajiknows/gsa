@@ -27,7 +27,7 @@ var analyzeCommand = &cobra.Command{
 			return err
 		}
 
-		issues, err := engine.Run(files, []engine.Rule{rules.TodoRule{}, rules.SleepRule{}})
+		issues, err := engine.Run(files, []engine.Rule{rules.TodoRule{}, rules.SleepRule{}, rules.ConcurrencyRule{}, rules.UncheckedErrorRule{}})
 		if err != nil {
 			return err
 		}
